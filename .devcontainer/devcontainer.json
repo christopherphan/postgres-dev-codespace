@@ -1,36 +1,23 @@
-{
-  "name": "PostgreSQL Dev Environment",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "18"
-    },
-    "ghcr.io/devcontainers/features/sshd:1": {
-        "version": "latest"
-    }
-  },
-  "forwardPorts": [5432, 8080],
-  "portsAttributes": {
-    "5432": {
-      "label": "PostgreSQL",
-      "visibility": "public"
-    },
-    "8080": {
-      "label": "Adminer (DB Admin)",
-      "visibility": "public"
-    }
-  },
-  "postCreateCommand": "docker-compose up -d && echo 'PostgreSQL Dev Environment Ready! Check ports 5432 (PostgreSQL) and 8080 (Adminer)'",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode.vscode-json",
-        "redhat.vscode-yaml",
-        "ms-python.python",
-        "ckolkman.vscode-postgres"
-      ]
-    }
-  }
-}
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: testdb
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres-network
+
+  adminer:
+    image: adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - postgres-network
+
+networks:
+  postgres-network:
+    driver: bridge

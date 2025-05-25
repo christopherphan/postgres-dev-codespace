@@ -194,4 +194,4 @@ The tunnel will stay active until you stop the command (Ctrl+C).
 You can also use a Database Client App like TablePlus to connect
 
 ![Imgur](https://i.imgur.com/O6eo0P5.png)
-![Imgur](https://i.imgur.com/pEeoLBO.png)
+![Imgur](https://i.imgur.com/VMHSp5I.png)
