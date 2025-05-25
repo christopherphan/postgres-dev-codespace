@@ -15,7 +15,7 @@ You cannot connect to it from a Database connector in an SaaS App as Codespace o
 - **PostgreSQL 15** database server
 - **Persistent data** across Codespace restarts
 - **Internet accessible** database (through Codespace port forwarding)
-- **Adminer** web interface for database management (currently not working)
+- **Adminer** web interface for database management
 - **Sample data** automatically created on first run
 - **Health checks** to ensure database is ready
 
@@ -86,14 +86,17 @@ If it's the first time spinning up the Codespace
 
 `chmod +x db.sh`
 
-### From the internet:
+### From the internet (NOT WORKING AS CODESPACE ONLY EXPOSE HTTPS AND NOT TCP AS REQUIRED BY POSTGRES):
 1. Go to the **Ports** tab in your Codespace
 2. Find port `5432` and copy the forwarded URL
 3. Use that URL as your host in your database client
 
 ### Web Admin Interface:
 - Access Adminer at port `8080` (also forwarded publicly)
-- Login with the database credentials above
+- Login with the database credentials above but specify the Postgres service name (`postgres`) for the host
+
+![Imgur](https://i.imgur.com/A58CshV.png)
+![Imgur](https://i.imgur.com/DouOuxC.png)
 
 ## Sample Data
 
