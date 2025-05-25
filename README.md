@@ -27,8 +27,8 @@ You cannot connect to it from a Database connector in an SaaS App as Codespace o
 3. **Verify services are running**: `./db.sh status` (run `chmod +x db.sh` first)
 4. **Access your database** using the connection details below
 
-![Imgur](https://i.imgur.com/0v6l67E.png)
-![Imgur](https://i.imgur.com/KWs0YL4.png)
+![codespace](images/codepace-main-1.png)
+![Imgur](images/codepace-main-2.png)
 
 If the database didn't start automatically, run: `./db.sh start`
 
@@ -95,8 +95,9 @@ If it's the first time spinning up the Codespace
 - Access Adminer at port `8080` (also forwarded publicly)
 - Login with the database credentials above but specify the Postgres service name (`postgres`) for the host
 
-![Imgur](https://i.imgur.com/A58CshV.png)
-![Imgur](https://i.imgur.com/DouOuxC.png)
+![Webadminer](images/launch-webadminer-1.png)
+![Webadminer](images/launch-webadminer-2.png)
+![Webadminer](images/launch-webadminer-3.png)
 
 ## Sample Data
 
@@ -106,9 +107,9 @@ The database comes pre-populated with sample tables:
 
 A useful Postgres command cheat sheet can be found [here](https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546).
 
+For example:
 * `\l` - List databases
 * `\c __database__` - Connect to a database (e.g. `\c postgres`)
-* \dt
 
 ## Customization
 
@@ -196,5 +197,5 @@ The tunnel will stay active until you stop the command (Ctrl+C).
 
 You can also use a Database Client App like TablePlus to connect
 
-![Imgur](https://i.imgur.com/O6eo0P5.png)
-![Imgur](https://i.imgur.com/VMHSp5I.png)
+![tableplus](image/tableplus-1.png)
+![tableplus](image/tableplus-2.png)
