@@ -15,7 +15,7 @@ You cannot connect to it from a Database connector in an SaaS App as Codespace o
 - **PostgreSQL 15** database server
 - **Persistent data** across Codespace restarts
 - **Internet accessible** database (through Codespace port forwarding)
-- **Adminer** web interface for database management
+- **Adminer** web interface for database management (currently not working)
 - **Sample data** automatically created on first run
 - **Health checks** to ensure database is ready
 
@@ -24,8 +24,11 @@ You cannot connect to it from a Database connector in an SaaS App as Codespace o
 1. **Fork this repository**
 1. **Create a Codespace** from the forked repository
 2. **Wait for setup** - The PostgreSQL database will start automatically during postCreate
-3. **Verify services are running**: `./db.sh status`
+3. **Verify services are running**: `./db.sh status` (run `chmod +x db.sh` first)
 4. **Access your database** using the connection details below
+
+![Imgur](https://i.imgur.com/0v6l67E.png)
+![Imgur](https://i.imgur.com/KWs0YL4.png)
 
 If the database didn't start automatically, run: `./db.sh start`
 
@@ -38,6 +41,10 @@ If the database didn't start automatically, run: `./db.sh start`
 - **Password**: `devpass123`
 
 ## Accessing the Database
+
+If it's the first time spinning up the Codespace
+
+`chmod +x db.sh`
 
 ### From within the Codespace:
 ```bash
@@ -75,6 +82,10 @@ The project includes a convenient `db.sh` script for managing your database:
 ./db.sh reset
 ```
 
+If it's the first time spinning up the Codespace
+
+`chmod +x db.sh`
+
 ### From the internet:
 1. Go to the **Ports** tab in your Codespace
 2. Find port `5432` and copy the forwarded URL
@@ -89,6 +100,12 @@ The project includes a convenient `db.sh` script for managing your database:
 The database comes pre-populated with sample tables:
 - `users` - Sample user accounts
 - `products` - Sample product catalog
+
+A useful Postgres command cheat sheet can be found [here](https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546).
+
+* `\l` - List databases
+* `\c __database__` - Connect to a database (e.g. `\c postgres`)
+* \dt
 
 ## Customization
 
@@ -176,4 +193,5 @@ The tunnel will stay active until you stop the command (Ctrl+C).
 
 You can also use a Database Client App like TablePlus to connect
 
-!
+![Imgur](https://i.imgur.com/O6eo0P5.png)
+![Imgur](https://i.imgur.com/pEeoLBO.png)
