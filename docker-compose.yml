@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   postgres:
     image: postgres:15
@@ -37,3 +35,7 @@ services:
 volumes:
   postgres_data:
     driver: local
+
+networks:
+  postgres-network:
+    driver: bridge
