@@ -205,12 +205,16 @@ You can also use a Database Client App like TablePlus to connect
 
 To run the API
 * CD into the `api_example_users` folder
+* Create a .env file (or rename .env.example to .env)
 * Run `npm install` the first time
 * Run `npm start`
 * Make the PORT public
 * Test API using Curl commands below
 
 Curl Commands (replace with your codespace URL)
+
+![apibaseurl](images/api-base-url-1.png)
+
 * Get All Users
 
     ```bash
