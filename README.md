@@ -17,6 +17,7 @@ You cannot connect to it from a Database connector in an SaaS App as Codespace o
 - **Internet accessible** database (through Codespace port forwarding)
 - **Adminer** web interface for database management
 - **Sample data** automatically created on first run
+- **Sample NodeJS/Express REST API** for CRUD operations to the users table
 - **Health checks** to ensure database is ready
 
 ## Quick Start
@@ -197,5 +198,49 @@ The tunnel will stay active until you stop the command (Ctrl+C).
 
 You can also use a Database Client App like TablePlus to connect
 
-![tableplus](image/tableplus-1.png)
-![tableplus](image/tableplus-2.png)
+![tableplus](images/tableplus-1.png)
+![tableplus](images/tableplus-2.png)
+
+## Sample NodeJS Express REST CRUD API
+
+To run the API
+* CD into the `api_example_users` folder
+* Run `npm install` the first time
+* Run `npm start`
+* Make the PORT public
+* Test API using Curl commands below
+
+Curl Commands (replace with your codespace URL)
+* Get All Users
+
+    ```bash
+    curl https://opulent-yodel-x559gp4g52gwg-3000.app.github.dev/api/users
+    ```
+  
+* Get User by id
+  
+    ```bash
+    curl https://opulent-yodel-x559gp4g52gwg-3000.app.github.dev/api/users/1
+    ```
+
+* Create User
+
+    ```bash
+    curl -X POST https://opulent-yodel-x559gp4g52gwg-3000.app.github.dev/api/users \
+    -H "Content-Type: application/json" \
+    -d '{"username":"Test User","email":"test@example.com"}'
+    ```
+
+* Update a User
+
+    ```bash
+    curl -X PUT https://opulent-yodel-x559gp4g52gwg-3000.app.github.dev/api/users/1 \
+    -H "Content-Type: application/json" \
+    -d '{"username":"XXX","email":"xxx@example.com"}'
+    ```
+
+* Delete User by id
+
+    ```bash
+    curl -X DELETE https://opulent-yodel-x559gp4g52gwg-3000.app.github.dev/api/users/1
+    ```
