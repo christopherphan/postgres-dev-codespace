@@ -1,6 +1,6 @@
 # PostgreSQL Dev Environment
 
-A simple PostgreSQL development environment designed for GitHub Codespaces with persistent data and limited internet access.
+A simple PostgreSQL development environment designed for GitHub Codespaces with persistent data.
 
 You can use this for:
 * Learning Postgres commands
